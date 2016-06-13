@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>My Store</title>
+    </head>
+    <body>
+        <h1>Welcome to My Store!</h1>
+
+        {% for category in categories %}
+            <h2>{{ category.name }}</h2>
+            {% for product in category.product_set.all %}
+                <a href="/product/{{ product.id }}">{{ product.name }}</a>
+            {% endfor %}
+        {% endfor %}
+    </body>
+</html>
